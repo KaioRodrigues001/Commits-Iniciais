@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "seu_usuario_do_banco";
-$password = "sua_senha_do_banco";
-$dbname = "nome_do_banco_de_dados";
+$username = "root";
+$password = "";
+$dbname = "login";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 $enteredUsername = $_POST['username'];
 $enteredPassword = $_POST['password'];
 
-$query = "SELECT * FROM users WHERE username = '$enteredUsername' AND password = '$enteredPassword'";
+$query = "SELECT * FROM usuarios WHERE usuario = '$enteredUsername' AND senha = '$enteredPassword'";
 $result = $conn->query($query);
 
 if ($result->num_rows == 1) {
